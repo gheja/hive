@@ -19,11 +19,13 @@ The Queen
 
 The Queen is the server, she controls all her little Bees, tell them what needs to be done and collects the results.
 
-She is implemented in PHP and backed with MySQL. From the nature she's made waits for her Bees on HTTP or HTTPS.
+She is implemented in PHP and backed with MySQL, waiting her Bees on HTTP or HTTPS by default.
 
 
-Workflow of a Bee (FIXME)
-================
+Workflow of a Bee
+=================
+
+FIXME: this section needs expansion...
 
 * startup
 * validation of settings
@@ -37,8 +39,10 @@ Workflow of a Bee (FIXME)
   * sending the results to her ("result" request)
 
 
-Security (FIXME)
-================
+Security
+========
+
+FIXME: this section needs expansion...
 
 * all bees have their unique identifiers (UUID) consisting of:
   * cluster ID (manually set, 16 chars, [0-9a-z_]{16})
@@ -46,9 +50,12 @@ Security (FIXME)
   * instance/process ID (calculated, 32 chars, [0-9a-f]{32})
   * bee version string (manually set, 8 chars, [0-9a-z]{8})
 
+the IDs should be shortened...
+
 * every incoming and outgoing message is signed
   * using a shared secret key
   * having a random nonce
   * having a signature based on the transmitted data
 
-the IDs should be shortened...
+this way the messages cannot be tampered from outside the cluster (the ones with secret key),
+but can be replayed (ie. we should use a time based or a one-time nonce or token)
