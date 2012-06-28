@@ -17,9 +17,19 @@ He is implemented in simple shell scripts, making wget requests towards the Quee
 The Queen
 ---------
 
-The Queen is the server, she controls all her little Bees, tell them what needs to be done and collects the results.
+The Queen is the server, she controls all her little Bees, tell them what needs to be done and collects the results in the Hive.
 
-She is implemented in PHP and backed with MySQL, waiting her Bees on HTTP or HTTPS by default.
+She is implemented in PHP and backed with MySQL at the Hive, waiting her Bees on HTTP or HTTPS by default.
+
+
+Other terms
+------------
+
+The Hive: this is the database with the jobs, and job slices.
+
+A job: This is the thing that needs to be done. There can be as many jobs as you want, you can assign a weight for each to denote its priority. Most important parts of it is script_name, script_parameters, weight.
+
+A job slice: Each job is divided into slices. Most importatnt parts of it: script_parameters.
 
 
 Workflow of a Bee
