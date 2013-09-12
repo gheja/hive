@@ -31,3 +31,6 @@ CREATE TABLE `slice` (
   KEY `status` (`status`),
   KEY `node_id` (`node_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+
+
